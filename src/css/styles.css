@@ -123,17 +123,16 @@ input:active {
   background-color: #6c8cff;
 }
 
+.loader-container {
+  display: flex;
+  justify-content: center;
+}
 .loader {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite;
-
-  position: fixed;
-  top: 20%;
-  left: 45%;
-  transform: translate(-50%, -50%);
 }
 .loader::before,
 .loader::after {
@@ -170,4 +169,28 @@ input:active {
   100% {
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
   }
+}
+
+.load-more {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 31px;
+
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  border: none;
+  background-color: #4e75ff;
+  border-radius: 8px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.load-more:hover {
+  background-color: #6c8cff;
 }
