@@ -5,21 +5,169 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 32px;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+}
+
+.gallery {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.item {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  column-gap: 24px;
+  margin-bottom: 24px;
+}
+
+.info-box {
+  display: flex;
+  /* gap: 8px; */
+  padding-top: 4px;
+  text-align: center;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+
+  border-bottom: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+  width: 360px;
+  height: 48px;
+}
+
+.number {
+  display: block;
+  text-align: center;
+
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+.info-box p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+input {
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  outline: transparent;
+  border: 2px solid #808080;
+  padding-left: 16px;
+}
+
+.btn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  border-radius: 8px;
+  width: 91px;
+  height: 40px;
+  color: #fff;
+  background-color: #4e75ff;
+  border-color: transparent;
+  margin-left: 8px;
+}
+
+input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+}
+
+input:hover {
+  border-color: #000000;
+}
+
+input:focus,
+input:active {
+  border-color: #4e75ff;
+}
+
+.btn:hover {
+  background-color: #6c8cff;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+
+  position: fixed;
+  top: 20%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+.loader::before,
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #4e75ff;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%,
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
 }
